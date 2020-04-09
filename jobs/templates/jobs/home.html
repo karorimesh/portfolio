@@ -37,9 +37,9 @@
 	      }
 
 	      #imagebg {
-	      	background-image: url({% static 'bg4.JPG' %});
-	      	background-repeat: repeat;	  
-	      	/*background-color: #ffffff;*/
+	      	background: url("/static/bg4.jpg") 50% 0 no-repeat fixed;
+	      	background-repeat: repeat; 
+	      	background-color: #00264d;
 	      }
 	      #nobg {
 	      	background: none !important;	     	    	      	
@@ -60,7 +60,7 @@
 	    <link href="album.css" rel="stylesheet">
 	  </head>
 	  <body id="imagebg">
-	  <iframe src="{% static 'bgif.jpg' %}" width="100%" height="100px" scrolling="no" style="text-align:right; overflow: hidden; border:0;" >e-works</iframe>
+	  <iframe src="{% static 'bgif.jpg' %}" width="100%" height="100px" scrolling="no" style="text-align:left; overflow: hidden; border:0;" >e-works</iframe>
 	    <header style="padding:0px; margin:0px;">
 	  <nav class="navbar navbar-expand-lg navbar-dark bg-none" style="opacity:1; padding-top:10px; " id="sticky">
 	  <a class="navbar-brand" href="{% url 'home' %}" >Karori Mesh</a>
@@ -81,7 +81,7 @@
 
 	  <section class="jumbotron text-center" id="nobg" >
 	    <div class="container" >
-	      <h1 style="color:black; text-align:left;">Mesh</h1><hr>
+	      <h1 style="color:white; text-align:left;">Mesh</h1><hr style="border-color:white;">
 	      <p class="lead text-muted"><b> Hi I'm Meshack Karori</b><br>I'm a programmer and Mathematician by profession. I'm also a computer scientist. Youre welcomed to browse my various projects in the field of mathematics and computer science. Don't forget to read and comment on my blogs. Also if you'd like to partner you can email me and we can talke more.</p>
 	      <p>
 	        <a href="mailto:eworkske@gmail.com" class="btn btn-primary my-2">Email Me</a>	    
