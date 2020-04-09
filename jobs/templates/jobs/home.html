@@ -44,6 +44,11 @@
 	      #nobg {
 	      	background: none !important;	     	    	      	
 	      }
+	      .sticky{
+	      	position:fixed;
+	      	top:0;
+	      	width: 100%;
+	      }
 
 	      @media (min-width: 768px) {
 	        .bd-placeholder-img-lg {
@@ -55,8 +60,9 @@
 	    <link href="album.css" rel="stylesheet">
 	  </head>
 	  <body id="imagebg">
-	    <header>
-	  <nav class="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-dark bg-dark" style="opacity:0.8;">
+	  <iframe src="{% static 'bgif.jpg' %}" width="100%" height="100px" scrolling="no" style="overflow: hidden; border:0;" ></iframe>
+	    <header style="padding:0px; margin:0px;">
+	  <nav class="navbar navbar-expand-lg navbar-dark bg-none" style="opacity:1; padding-top:10px; " id="sticky">
 	  <a class="navbar-brand" href="{% url 'home' %}" >Karori Mesh</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
@@ -71,7 +77,7 @@
 	</nav>
 	</header>
 
-	<main role="main" >
+	<main role="main" style="padding-top:10px;">
 
 	  <section class="jumbotron text-center" id="nobg" >
 	    <div class="container" >
@@ -113,6 +119,20 @@
 	    <p>© Karori Mesh {% now "Y" %}</p>
 	  </div>
 	</footer>
+	<script type="text/javascript">
+		window.onscroll = function() {myfunction()};
+
+		var navbar = document.getElementById("sticky");
+		var sticky = navbar.offsetTop;
+
+		function myfunction(){
+			if(window.pageYOffset >= sticky){
+				navbar.classList.add("sticky");
+			}else {
+				navbar.classList.remove("sticky");
+			}
+		}
+	</script>
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
